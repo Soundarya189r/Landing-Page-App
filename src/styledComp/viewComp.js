@@ -14,11 +14,10 @@ import gadgetsmain from '../../src/assets/gadgetsmain.jpg'
   `;
 
 export const Div=styled.div`
-          height: "100vh";
-        backgroundSize: "cover";
-        backgroundRepeat: "no-repeat";
-        backgroundPosition: "center";
-        backgroundImage: url(${gadgetsmain})
+          height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(${gadgetsmain});
         `;
 
-  export default Title;

@@ -1,16 +1,10 @@
 import React from 'react'
-import Title from "./styleAbout"
-import gadgetsmain from '../../src/assets/gadgetsmain.jpg'
+import {Title,Div} from "../styledComp/viewComp"
 
-function About() {
+function Contact() {
     return (
-        <>
-        <div  style={{
-            height: "100vh",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundImage: `url(${gadgetsmain})` }}>
+        <Div>
+        
                  <Title >
                     <h1>To Contact</h1>
                 </Title>
@@ -30,10 +24,8 @@ function About() {
                     
 
                 </Title>
-                </div>
-               
+                </Div>         
     
-    </>
     )
         }
-export default About
+export default Contact

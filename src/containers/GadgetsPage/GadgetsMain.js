@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import Hoc from "../../wrapper/hoc"
-import Gadgets from "../../components/Gadgets/Gadgets"
 import GadgetSelect from "../../components/Gadgets/GadgetsSelect/GadgetsSelect"
 import Modal from '../../../src/components/UI/Modal/Modal'
 import OrderSummary from '../../../src/components/Gadgets/OrderSummary/OrderSummary'
+import axios from 'axios';
+
 
 const  GADGET_PRICES={
     pc:50000,
@@ -11,6 +12,9 @@ const  GADGET_PRICES={
     android:30000,
     laptop: 65000
 };
+
+
+
 export class GadgetsMain extends Component {
     state = {
         gadgets: {
@@ -21,8 +25,18 @@ export class GadgetsMain extends Component {
         },
         totalPrice: 0,
         purchasable: false,
-        purchasing: false
+        purchasing: false,
+
+        persons:[]
         
+    }
+    componentDidMount(){
+        axios.get(`https://jsonplaceholder.typicode.com/posts/2`)
+        .then(res=>
+            {
+                console.log(res);
+this.setState({persons:res.data});
+        })
     }
     updatePurchaseState(gadgets){
 //         const gadgets={
@@ -61,6 +75,14 @@ export class GadgetsMain extends Component {
     }
     purchaseContinueHandler = ()=>{
         alert('You Continue!')
+        const price= this.state.totalPrice
+
+        axios.post(`https://jsonplaceholder.typicode.com/posts`,{price})
+        .then(res => 
+            {
+                console.log(res.data);
+            });
+    
     }
     render() {
         return (
@@ -73,12 +95,13 @@ purchaseCancel={this.purchaseCancelHandler}
 purchaseContinue={this.purchaseContinueHandler}
 ></OrderSummary>
          </Modal>
-<Gadgets/>
-<GadgetSelect gadgetsAdded={this.addGadgetsHandler}
+
+         <GadgetSelect gadgetsAdded={this.addGadgetsHandler}
 price={this.state.totalPrice}
 purchasable={this.state.purchasable}
 ordered={this.purchaseHandler}
 />
+
             </Hoc>
         )
     }

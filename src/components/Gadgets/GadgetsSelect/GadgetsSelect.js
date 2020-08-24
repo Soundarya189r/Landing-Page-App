@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import GadgetOne from './GadgetOne'
+import Gadgets from '../Gadgets'
 
 const BuildControls=styled.div`
 width: 100%;
@@ -61,15 +62,20 @@ const controls = [
 
 const GadgetsSelect = (props) =>(
     <div>
+
     <BuildControls>
-<p>Current Price: {props.price.toFixed(2)}</p>
+<Gadgets/>
         {
+
             controls.map(ctrl =>(
                 <GadgetOne key={ctrl.label}
                  label={ctrl.label}
                  added={()=>props.gadgetsAdded(ctrl.type)}/>
+                 
             ))
         }
+        <p>Current Price: {props.price.toFixed(2)}</p>
+        
         <StyledButton>
         <button
         disabled={!props.purchasable}
@@ -77,6 +83,7 @@ const GadgetsSelect = (props) =>(
         >ORDER NOW</button>
 
         </StyledButton>
+
     </BuildControls>
     </div>
 );

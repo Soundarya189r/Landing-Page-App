@@ -2,10 +2,14 @@ import React from "react";
 import styled from "styled-components"
 
 const GadgetStyle=styled.div`
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin: 5px 0;
+width: 20%;
+height: auto;
+padding-right:60px;
+paddind-left:60px;
+display:inline-block;  background-repeat: no-repeat;
+background-size: contain;
+position: relative;
+
 `;
 
 const GadgetButton=styled.div`display: block;
@@ -31,18 +35,24 @@ outline: none;
 `;
 
 const LabelStyle=styled.div` 
-   padding: 10px;
+padding: 10px;
 font-weight: bold;
 width: 80px;`;
 
 
 
 const GadgetOne = (props) =>(
-<GadgetStyle>
-<LabelStyle>{props.label}</LabelStyle>
+
+   <>
+     <LabelStyle>{props.label}</LabelStyle>
 <GadgetButton onClick={props.added}>Add</GadgetButton>
 
-</GadgetStyle>
+
+</>
+
+
+
+    
 );
 
 export default GadgetOne;

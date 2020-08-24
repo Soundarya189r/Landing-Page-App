@@ -1,14 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
 import android from '../../../assets/android.jpg'
 import pc from '../../../assets/pc.jpg'
 import iphone from '../../../assets/iphone.jpg'
 import laptop from '../../../assets/laptop.jpg'
-import Gallery from '../GadgetItems/GadgetStyle'
-
-
-
-
+import {Gallery,Card} from '../GadgetItems/GadgetStyle'
 
 
 const GadgetItem=(props)=>{

@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 
 
-  const Gallery =styled.div`
+  export const Gallery =styled.div`
   width: 20%;
   height: auto;
   padding-right:60px;
   paddind-left:60px;
-display:inline-block;  background-repeat: no-repeat;
-background-size: contain;
-position: relative;
+  display:inline-block;  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
 
   
-  img {
+   img {
     width: 72%;
     height: 50%;
   }
@@ -21,4 +21,4 @@ position: relative;
   `;
 
 
-  export default  Gallery;
+

@@ -1,21 +1,14 @@
 import React from 'react'
-import Title from "./styleAbout"
-import gadgetsmain from '../../src/assets/gadgetsmain.jpg'
+import {Title,Div} from "../styledComp/viewComp"
 
 function About() {
     return (
-        <>
-        <div  style={{
-            height: "100vh",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundImage: `url(${gadgetsmain})` }}>
+            <Div>
                  <Title >
                     <h1>About Us</h1>
                 </Title>
                 <Title>
-                    <h2>Shop all Gadgets with us</h2>
+                    <h2>Shop all range of gadgets with us</h2>
                 </Title>
                 <Title>
                     <ul>
@@ -31,10 +24,9 @@ function About() {
                     </ul>
 
                 </Title>
-                </div>
+                </Div>
                
     
-    </>
     )
         }
 export default About

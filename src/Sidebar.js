@@ -1,49 +1,37 @@
 import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
-import GadgetsMainPage from '../src/containers/GadgetsPage/GadgetsMain'
-import Contact from './components/Contact'
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
-    useParams
-  } from "react-router-dom";
-import Home from './components/Home';
-import About from './components/About';
-import Login from './components/Login/Login'
+    Link,useParams  } from "react-router-dom";
+import About from './view/About'
+import Login from './components/Login/Login';
+import Home from './view/Home';
+import Contact from './view/Contact'
+import PrivateRoute from './components/Login/private-route';
+import GadgetsMain from './containers/GadgetsPage/GadgetsMain';
   
 
 export default props => {
-
-
   return (
    <Router>
     <Menu>
-      <Link className="menu-item" to="/" 
-    
-    >
-        Login
-        </Link>
-        
-
-      <Link className="menu-item" to="/about">
-       About
-      </Link>
-
-      <Link className="menu-item" to="/contact">
-        Contact Us
-      </Link>
-     
-    </Menu>
+      <Link className="menu-item" to="/" >Home</Link>
+      <Link className="menu-item" to="/about"> About</Link>
+      <Link className="menu-item"to="/shop"> Shop</Link>
+      <Link className="menu-item" to="/logout">Logout</Link>
+      <Link className="menu-item" to="/contact">  Contact Us </Link>
+     </Menu>
 
     <Switch>
-              <Route exact path='/' component={Login} />
-              {/* <Route  path='/login' component={Login}/> */}
+              <Route exact path='/' component={Home} />
+              <PrivateRoute path='/shop' component={GadgetsMain }/>
               <Route path='/about' component={About} />
               <Route path='/contact' component={Contact} />
+              <Route path='/logout' component={Login}/>
 
-          </Switch>
+    </Switch>
 
     </Router>
   );

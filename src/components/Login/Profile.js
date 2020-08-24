@@ -14,9 +14,9 @@ import GadgetsMain from '../../containers/GadgetsPage/GadgetsMain';
 
 const Img=styled.div`  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 max-width: 300px;
-margin: auto;
-text-align: center;
-font-family: arial;
+// margin: auto;
+// font-family: arial;
+display:inline-block;
 `;
 
  const Button=styled.div`
@@ -26,7 +26,6 @@ display: inline-block;
 padding: 8px;
 color: white;
 background-color: #000;
-text-align: center;
 cursor: pointer;
 width: 100%;
 font-size: 18px;
@@ -35,6 +34,7 @@ font-size: 18px;
 
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
+  console.log(user.id);
 
   return (
     isAuthenticated && ( 
@@ -48,7 +48,7 @@ const Profile = () => {
         {/* {JSON.stringify(user, null, 2)} */}
       
       </Img>
-        <Router>
+        {/* <Router>
         <Link 
         style={{textAlign:"center"}}to="/user/shop">Click to view our Items</Link>
         <Switch>
@@ -57,8 +57,7 @@ const Profile = () => {
           </Route>
 
         </Switch>
-
-</Router>
+</Router> */}
 </>
     )
   )
