@@ -1,18 +1,6 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import styled from 'styled-components'
-
-
-const Button=styled.div`
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-max-width: 300px;
-// margin: auto;
-background-color:  white;
-padding: 1em;
-margin-bottom: 2em;
-color: black;
-`;
-
+import {Button} from '../../styledComp/LoginStyle'
 
 const LogoutButton = () => {
   const { logout, isAuthenticated } = useAuth0();

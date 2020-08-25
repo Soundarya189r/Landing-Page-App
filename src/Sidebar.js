@@ -4,7 +4,7 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,useParams  } from "react-router-dom";
+    Link } from "react-router-dom";
 import About from './view/About'
 import Login from './components/Login/Login';
 import Home from './view/Home';
@@ -19,18 +19,17 @@ export default props => {
     <Menu>
       <Link className="menu-item" to="/" >Home</Link>
       <Link className="menu-item" to="/about"> About</Link>
-      <Link className="menu-item"to="/shop"> Shop</Link>
-      <Link className="menu-item" to="/logout">Logout</Link>
       <Link className="menu-item" to="/contact">  Contact Us </Link>
+      <Link className="menu-item" to="/shop">  Shop </Link>
+      <Link className="menu-item" to="/profile">Profile</Link>
      </Menu>
 
     <Switch>
               <Route exact path='/' component={Home} />
-              <PrivateRoute path='/shop' component={GadgetsMain }/>
               <Route path='/about' component={About} />
               <Route path='/contact' component={Contact} />
-              <Route path='/logout' component={Login}/>
-
+              <PrivateRoute exact path="/shop" component={GadgetsMain} />
+              <PrivateRoute path='/profile' component={Login}/>
     </Switch>
 
     </Router>

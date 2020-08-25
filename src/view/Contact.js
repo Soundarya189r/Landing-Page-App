@@ -4,7 +4,6 @@ import {Title,Div} from "../styledComp/viewComp"
 function Contact() {
     return (
         <Div>
-        
                  <Title >
                     <h1>To Contact</h1>
                 </Title>

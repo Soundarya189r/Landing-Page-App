@@ -44,14 +44,14 @@ const LoginButton = () => {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundImage: `url(${gadgetsmain})` }}>
-             <Title>
+             {/* <Title>
                 <h1>Welcome to Gadget Shopping</h1>
-            </Title>
+            </Title> */}
 
       <Button onClick={() => loginWithRedirect()}>
-<h1 style={{  cursor: "pointer"
-}}>LogIn to Shop with us</h1>      </Button>
+</Button>
       </div>
+      
     )
   )
 }

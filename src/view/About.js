@@ -12,19 +12,15 @@ function About() {
                 </Title>
                 <Title>
                     <ul>
-                        <li>
-                            Iphone
-                        </li>
-                        <li>
-                            Android
-                        </li>
+                        <li> Iphone </li>
+                        <li>Android</li>
                         <li>PC</li>
                         <li>Laptop</li>
                         <li>Much more...</li>
                     </ul>
 
                 </Title>
-                </Div>
+             </Div>
                
     
     )

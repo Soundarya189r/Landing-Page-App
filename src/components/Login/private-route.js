@@ -8,8 +8,6 @@ const PrivateRoute=({component, ...args}) => (
 component={withAuthenticationRequired(component,{
     onRedirecting:()=> <Login/>,
 })}
-
-
 />
 );
 

@@ -1,5 +1,15 @@
 import React from "react"
 import styled from "styled-components";
+import {Title} from '../../../styledComp/viewComp'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link  } from "react-router-dom";
+
+import Login from "../../Login/Login";
+    
+
 
 const ItemStyle = styled.ul`
     margin: 0;
@@ -18,9 +28,14 @@ const ItemStyle = styled.ul`
 }
 `;
 const navigationItems = () =>(
-<ItemStyle>
-    <li ><a href="/">A Link</a></li>
-</ItemStyle>
+    <Router>
+    <Link to="/shop/profile">View Profile</Link>
+<Switch>
+<Route  path='/shop/profile' component={Login}/>
+</Switch>
+
+    </Router>
+
 );
 
 export default navigationItems;

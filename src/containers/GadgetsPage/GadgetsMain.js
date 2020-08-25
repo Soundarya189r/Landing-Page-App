@@ -4,44 +4,32 @@ import GadgetSelect from "../../components/Gadgets/GadgetsSelect/GadgetsSelect"
 import Modal from '../../../src/components/UI/Modal/Modal'
 import OrderSummary from '../../../src/components/Gadgets/OrderSummary/OrderSummary'
 import axios from 'axios';
-
+import Gadgets from '../../components/Gadgets/Gadgets'
+import {Title} from '../../styledComp/viewComp'
 
 const  GADGET_PRICES={
     pc:50000,
     iphone:60000,
     android:30000,
     laptop: 65000
-};
-
-
+    };
 
 export class GadgetsMain extends Component {
+    
     state = {
         gadgets: {
             iphone: 0,
             laptop: 0,
             pc: 0,
             android: 0
-        },
+            },
         totalPrice: 0,
         purchasable: false,
         purchasing: false,
-
-        persons:[]
+        order:false
         
     }
-    componentDidMount(){
-        axios.get(`https://jsonplaceholder.typicode.com/posts/2`)
-        .then(res=>
-            {
-                console.log(res);
-this.setState({persons:res.data});
-        })
-    }
     updatePurchaseState(gadgets){
-//         const gadgets={
-// ...this.state.gadgets
-//         };
         const sum=Object.keys(gadgets)
         .map(igKey=>{
             return gadgets[igKey];
@@ -59,11 +47,17 @@ this.setState({persons:res.data});
           ...this.state.gadgets
       };
       updatedGadgets[type]=updatedCount;
+
       const priceAddition = GADGET_PRICES[type];
       const oldPrice = this.state.totalPrice;
       const newPrice = oldPrice + priceAddition;
       this.setState( { totalPrice: newPrice, gadgets: updatedGadgets } ); 
       this.updatePurchaseState(updatedGadgets);
+    }
+
+
+    orderHandler=()=>{
+        this.setState({order : true});
     }
 
     purchaseHandler=()=>{
@@ -72,20 +66,27 @@ this.setState({persons:res.data});
 
     purchaseCancelHandler=()=>{
         this.setState({purchasing :false});
+        const newPrice=0;
+        this.setState({totalPrice:newPrice});
     }
-    purchaseContinueHandler = ()=>{
-        alert('You Continue!')
-        const price= this.state.totalPrice
 
-        axios.post(`https://jsonplaceholder.typicode.com/posts`,{price})
+    purchaseContinueHandler = ()=>{
+        alert('You Order is placed!')
+        const price= this.state.totalPrice
+        const Gadget = this.state.gadgets
+
+        axios.post(`https://jsonplaceholder.typicode.com/posts`,{price,Gadget})
         .then(res => 
             {
                 console.log(res.data);
+
             });
+
     
     }
+
     render() {
-        return (
+        return (    
      <Hoc>
          <Modal show={this.state.purchasing}
           modalClosed={this.purchaseCancelHandler}>
@@ -95,14 +96,15 @@ purchaseCancel={this.purchaseCancelHandler}
 purchaseContinue={this.purchaseContinueHandler}
 ></OrderSummary>
          </Modal>
-
+         <Title>Shopping Cart</Title>
+<Gadgets/>
          <GadgetSelect gadgetsAdded={this.addGadgetsHandler}
 price={this.state.totalPrice}
 purchasable={this.state.purchasable}
 ordered={this.purchaseHandler}
 />
-
             </Hoc>
+         
         )
     }
 }

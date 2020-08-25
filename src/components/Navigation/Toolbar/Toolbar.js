@@ -9,7 +9,7 @@ const Tool=styled.header`
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #703B09;
+    background-color: ;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,7 +31,6 @@ const Tool=styled.header`
 const toolbar=(props)=>(
 
     <Tool>
-        <div>MENU</div>
 <NavigationItem/>
     </Tool>
 
