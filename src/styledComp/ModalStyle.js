@@ -12,7 +12,8 @@ padding: 16px;
 left: 15%;
 top: 30%;
 box-sizing: border-box;
-transition: all 0.3s ease-out;
+transition: all 0.3s ease-out;s
+text-align:center;
 
 
 @media (min-width: 600px) {

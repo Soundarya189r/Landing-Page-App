@@ -68,6 +68,7 @@ export class GadgetsMain extends Component {
         this.setState({purchasing :false});
         const newPrice=0;
         this.setState({totalPrice:newPrice});
+        
     }
 
     purchaseContinueHandler = ()=>{
