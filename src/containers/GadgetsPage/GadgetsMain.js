@@ -76,7 +76,7 @@ export class GadgetsMain extends Component {
         const price= this.state.totalPrice
         const Gadget = this.state.gadgets
 
-        axios.post(`https://jsonplaceholder.typicode.com/posts`,{price,Gadget})
+        axios.post(`https://jsonplaceholder.typicode.com/posts`,{price, Gadget})
         .then(res => 
             {
                 console.log(res.data);
