@@ -1,5 +1,6 @@
 {
   "name": "gadgets-app-react",
+  "start": "npm index.html",
   "version": "0.1.0",
   "private": true,
   "engines": {
