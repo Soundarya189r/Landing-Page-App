@@ -10,10 +10,17 @@ import Login from './components/Login/Login';
 import Home from './view/Home';
 import Contact from './view/Contact'
 import PrivateRoute from './components/Login/private-route';
-import GadgetsMain from './containers/GadgetsPage/GadgetsMain';
+import ShoppingCart from './components/Gadgets/Products/ShoppingCart'
   
-
 export default props => {
+
+  const NotFound=()=>{
+    return(
+<div style={{textAlign: 'center'}}>
+    <h3>404 page not found</h3>
+    <p>We are sorry but the page you are looking for does not exist.</p>
+  </div>    );
+  }
   return (
    <Router>
     <Menu>
@@ -22,14 +29,17 @@ export default props => {
       <Link className="menu-item" to="/contact">  Contact Us </Link>
       <Link className="menu-item" to="/shop">  Shop </Link>
       <Link className="menu-item" to="/profile">Profile</Link>
+
      </Menu>
 
     <Switch>
               <Route exact path='/' component={Home} />
               <Route path='/about' component={About} />
               <Route path='/contact' component={Contact} />
-              <PrivateRoute exact path="/shop" component={GadgetsMain} />
+              <PrivateRoute exact path="/shop" component={ShoppingCart} />
               <PrivateRoute path='/profile' component={Login}/>
+              <Route path="*" component={NotFound} />
+
     </Switch>
 
     </Router>

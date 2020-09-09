@@ -7,6 +7,7 @@ margin: auto;
 background-color:  #ff3385;
 color: #80ccff;
 padding: 1em;
+cursor: pointer;
 text-align: center;
 margin-bottom: 2em;
 `;

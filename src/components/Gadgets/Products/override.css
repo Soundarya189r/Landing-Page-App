@@ -1,0 +1,16 @@
+.carousel .thumb img {
+    width: 100% !important;
+    height: 100% !important;
+
+}
+
+.carousel .slide img {
+    max-height: 600px;  /* change this to whatever you want */
+    width: auto;
+}
+
+.carousel .legend img{
+    max-height: 300px;  /* change this to whatever you want */
+    width: auto;
+
+}

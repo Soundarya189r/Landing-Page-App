@@ -3,6 +3,9 @@ import Sidebar from './Sidebar'
 import { useAuth0 } from '@auth0/auth0-react';
 import './App.css';
 import {Loader} from './styledComp/loader'
+import ModalHook from './components/Gadgets/Products/Modal';
+
+
 
 
 function App() {
@@ -12,6 +15,7 @@ function App() {
   return (      
     <div id="App">        
       <Sidebar />
+      <ModalHook>Hello</ModalHook>
       </div> 
   );
 }
