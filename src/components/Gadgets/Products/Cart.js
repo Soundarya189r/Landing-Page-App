@@ -55,8 +55,8 @@ const Cart = (props) => {
 <p>Wish to Continue? Hit Order</p>
 <Order onClick={openModal}>Order</Order>
 <ModalHook modalIsOpen={modalIsOpen} closeModal={closeModal}>You're order on the way!!!
-<h1>OrderId: XYZ{Math.random() * 100}</h1>
-<h1>Paid Amount: {props.price.toFixed(2)}</h1>
+<p >OrderId : XYZ{Math.floor(Math.random() * 100)}</p>
+<p>Paid Amount: ${props.price.toFixed(2)}</p>
 
 </ModalHook>
 </div>
