@@ -1,20 +1,28 @@
-import React from 'react'
+import React, {useContext, useEffect} from 'react'
 import GridView from './GridView';
 import MoreLess from './moreLess';
 import {Order, Wrap, Name, Specs,  Features} from '../../../styledComp/ProductStyle'
+import ProductContext from './context/productContext';
 
 
+const Product = props => {
+  const context = useContext(ProductContext);
 
-const Product = (props) => {
+  useEffect(() => {
+    console.log(context);
+  }, [context]);
+
     return (
-      <>
-<h1 style={{textAlign:'center'}}>Shopping Cart</h1>
-        <div>
-        { 
-        props.products.map( (prd, index) => (
-            <Wrap  key ={index}       
-            
-         >
+      <div>
+        
+
+      <h1 style={{textAlign:'center'}}>Shopping Cart</h1>
+      {/* <ProductContext.Consumer>
+        { context=>( */}
+          <>
+          {
+        context.products.map( (prd, index) => (
+            <Wrap  key ={index} >
    
 
    <Name>{prd.name}</Name>
@@ -31,15 +39,20 @@ const Product = (props) => {
 
           </Specs>
 
-          <Order onClick={()=>props.addCart(prd)}>Add to Cart</Order>
-             
+          <Order 
+         onClick={context.addCart.bind(this, prd)}
+>Add to Cart</Order>
+
 
               </Wrap>
             ))
         }
+        </>
+        {/* )
+        }
 
+    </ProductContext.Consumer> */}
     </div>
-    </>
     );
 
 

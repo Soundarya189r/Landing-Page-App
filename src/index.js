@@ -18,9 +18,7 @@ ReactDOM.render(
     redirectUri={window.location.origin}
     audience={audience}
     scope={scope}
-
     >
-
 
        <App/>
   </Auth0Provider>

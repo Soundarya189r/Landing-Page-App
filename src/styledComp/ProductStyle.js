@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {NavLink} from 'react-router-dom'
 
 
 export const Div = styled.table`
@@ -22,6 +23,30 @@ img {
   }
 
 `;
+export const NavStyle = styled(NavLink)`
+text-decoration: none;
+float:right;
+font: inherit;
+padding: 15px 25px;
+font-size: 24px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: black;
+background-color: rgba(0,0,0,0.2);
+border: none;
+border-radius: 15px;
+box-shadow: 0 9px #999;
+
+
+&:hover {background-color: #ff3385}
+
+&:active {
+background-color: #ff3385;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
+}`;
+
 
 export const Order=styled.button` 
 font: inherit;
@@ -82,3 +107,9 @@ export const Wrap = styled.div`
 margin-left:auto;
 margin-right: auto;
             `;
+
+
+          export  const Label=styled.label`
+padding: 5em;
+font: inherit;
+`;

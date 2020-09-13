@@ -22,12 +22,13 @@ const ModalHook=(props)=>{
           isOpen={props.modalIsOpen}
           onRequestClose={props.closeModal}
           style={customStyles}
-          contentLabel="Example Modal"
+          ariaHideApp={false}
+
         >
  {props.children}
           
         </Modal>
-      </div>
+        </div>
     );
 }
 

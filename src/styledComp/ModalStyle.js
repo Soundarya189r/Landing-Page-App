@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const Modal=styled.div`
+export const ModalStyle=styled.div`
 position: fixed;
 z-index: 500;
 background-color: white;

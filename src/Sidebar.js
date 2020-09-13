@@ -11,6 +11,7 @@ import Home from './view/Home';
 import Contact from './view/Contact'
 import PrivateRoute from './components/Login/private-route';
 import ShoppingCart from './components/Gadgets/Products/ShoppingCart'
+import Cart from './components/Gadgets/Products/Cart'
   
 export default props => {
 
@@ -38,7 +39,9 @@ export default props => {
               <Route path='/contact' component={Contact} />
               <PrivateRoute exact path="/shop" component={ShoppingCart} />
               <PrivateRoute path='/profile' component={Login}/>
+              <Route path="/shop/cart" component={Cart}  />
               <Route path="*" component={NotFound} />
+
 
     </Switch>
 
